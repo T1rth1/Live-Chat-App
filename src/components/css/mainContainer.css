@@ -1,0 +1,467 @@
+*{
+  margin:0;
+}
+/* *{
+  margin:0;
+}*/
+
+.App{
+  background-color:#dddedd ;
+   min-height: 100vh; /*view port height */
+  display:flex;
+  justify-content: center;
+  align-items:center ;
+}
+.main-container
+{
+    background-color: #f4f5f8;
+    height: 90vh;
+    width: 90vw;
+    display:flex;/*arrange in horizontal*/
+    border-radius: 20px;
+}
+.sideBar-container{
+    flex:0.3;
+    display: flex; /*by deafault flex is by row*/
+    flex-direction:column ;
+
+}
+.icon {
+  width: 1.25em !important;
+  height: 1.25em !important;
+}
+.dark{
+    background-color: #2d3941 !important;
+    color:white !important;
+}
+
+.sb-header{
+    background-color: white;
+    border-radius: 20px;
+    padding:10px 5px;
+    margin:10px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
+}
+.other-icons{
+    display: flex;
+    flex: 1;
+    justify-content: space-evenly;
+}
+.sb-search{
+    background-color: white;
+    border-radius: 20px;
+    padding:5px 10px;
+    margin:10px;
+    display: flex;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    
+}
+
+.search-box
+{
+    outline-width: 0;
+    border:none;
+    margin-left:10px;
+    font-size: 1.20rem;
+}
+
+.sb-conversations
+{
+    background-color: white;
+    border-radius: 20px;
+    padding:5px 10px;
+    margin: 10px;
+    flex:1;
+    overflow: scroll;
+    scrollbar-width: none;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
+}
+.sb-conversations::-webkit-scrollbar{
+    display:none;
+}
+.conversation-container{
+    display:grid;
+    grid-template-columns: 32px auto auto;
+    grid-template-rows: auto auto;
+    column-gap:10px;
+    padding:5px;
+    margin:5px;
+    border-radius:20px;
+    transition-duration: 0.5s ;
+}
+.conversation-container:hover{
+    background-color: rgb(226,226,226);
+}
+.conversation-container:active{
+    background-color: white;
+}
+.con-icon{
+    grid-area: 1/1/3/2; /*show this numbers in console dev..*/
+    /*grid-area: <grid-row-start> / <grid-column-start> / <grid-row-end> / <grid-column-end>;*/
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d9d9d9;
+    font-family: "Segoe UI",'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2rem;
+    font-weight: bolder;
+    color:white;
+    height: 32px;
+    width: 32px;
+    padding: 2px;
+    border-radius: 50%;
+    justify-self: center;
+    align-self: center; /*to center logo inside it's occupied grid*/
+}
+
+.con-title{
+    grid-area:1/2/2/4;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight:bold;
+    color:rgba(0,0,0,0.54);
+    margin-left: 10px;
+}
+.con-timeStamp{
+    justify-self: flex-end;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.75rem;
+    color:rgba(0,0,0,0.54);
+}
+
+.con-lastMessage{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size:0.75em;
+    margin-left:10px;
+}
+/*chat area css*/
+.chatArea-container{
+    display: flex;
+    flex-direction:column;
+    flex:0.7;
+    /* max-width: 70%; */
+    /* width:100%; */
+    /* box-sizing: border-box;
+    overflow-wrap: break-word;
+    word-wrap: break-word; */
+    /* background-color: white; */
+}
+.chat-timeStamp{
+    margin-left: 11px;
+}
+.chatArea-header{
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px;
+    padding:10px 10px;
+    margin:10px;
+    gap:10px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
+}
+.header-text{
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    flex:1;
+    
+}
+/* message section */
+.message-container{
+    overflow: scroll;
+    scrollbar-width: none;
+    background-color: white;
+    border-radius: 20px;
+    padding:10px 10px;
+    margin:10px;
+    flex:1; /*it takes all maximum awailable space(height)(in column)*/
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    max-width: 100%;
+    box-sizing: border-box;
+    font-size: 14px; /* Adjust as needed */
+    line-height: 1.5;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+.message-container::-webkit-scrollbar{
+    display:none;
+}
+/* text section */
+.text-input-area{
+    border-radius: 20px;
+    padding:10px 10px;
+    margin:10px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
+}
+
+/*for self message section*/
+.self-message-container {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+.messageBox {
+    display: flex;
+    flex-direction: column;
+    background-color: #63d7b0;
+    /* width: max-content; occupie max width possible */
+    padding: 10px 10px;
+    margin: 5px;
+    border-radius: 20px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+  .self-timeStamp {
+    align-self: flex-end;
+    font-size: 0.75rem;
+    font-weight: lighter;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+/*for other message section*/
+
+.other-message-container .conversation-container:hover
+{
+  background-color: white;
+}
+.other-message-container {
+  display: flex;
+  justify-content: flex-start;
+}
+.other-message-container .con-lastMessage
+{
+  color: black;
+  font-size:medium;
+  /* font-style: normal; */
+  /* font-weight: bold; */
+}
+.other-text-content {
+    background-color: #d9d9d9;
+    padding: 10px 10px;
+    margin: 5px;
+    border-radius: 20px;
+    /* width: max-content; */
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow-wrap: break-word; /* Add this line to break words */
+    word-wrap: break-word;
+    max-width: 100%;
+  }
+
+  /*for welcom page*/
+
+  .welcome-container{
+    flex:0.7;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:rgba(0,0,0,0.54);
+    border-bottom: 5px solid #2CD3E1;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
+  }
+  .welcome-logo {
+    height: 20vw;
+  }
+
+  /*create group section*/
+
+  .createGroups-container{
+    flex:0.7;
+    align-self: center; /*to comment out this code and check what happen in webpage*/
+    padding: 20px 10px;
+    margin:10px;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
+  }
+/*  login section css*/
+  .login-container {
+    height: 90vh;
+    width: 90vw;
+    background-color: #f4f5f8;
+    border-radius: 20px;
+    display: flex;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
+  }
+  
+  .image-container {
+    flex: 0.3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .login-text {
+    font-size: 2vw;
+    padding-bottom: 20px;
+  }
+  
+  .login-box {
+    flex: 0.7;
+    background-color: white;
+    border-radius: 20px;
+    margin: 10px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #2CD3E1;
+    font-weight: bolder;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  /* online users css*/
+  .list-container {
+    flex: 0.7;
+    display: flex;
+    flex-direction: column;
+  }  
+  .user-image{
+    height:2rem;
+    width:2rem;
+    margin-left:10px;
+  }
+.ug-header {
+    background-color: white;
+    border-radius: 20px;
+    padding: 12px 5px;
+    margin: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
+  }
+  
+  .ug-title {
+    display: flex;
+    color: rgba(0, 0, 0, 0.54);
+    margin-left: 10px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+  }
+  
+  .ug-list {
+    flex: 1;
+    overflow: scroll;
+    scrollbar-width: none;
+    padding: 10px;
+    
+  }
+  
+  .ug-list::-webkit-scrollbar {
+    display: none;
+  }
+  .list-term {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px 5px;
+    margin: 10px;
+    user-select: none;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    transition-duration:0.5s;
+  }
+  .list-term:hover{
+    background-color: rgb(226,226,226);
+  }
+  .list-term:active{
+    background-color: white;
+  }
+  .hyper {
+    color: darkviolet;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  .sms-icon{
+    display:none !important;
+  }
+  .MuiTextField-root{
+    width: 26%;
+  } /* textfield's css class extracted from "inspect"*/
+  /*mobile view implemention*/
+  @media only screen and (max-width: 40em){
+    .sb-search{
+        display: none;
+    }
+    
+    .sb-conversations{
+        display: none;
+    }
+    .sb-header{
+        flex-direction: column;
+        flex:1;
+        width: min-content;
+    }
+    .image-container{
+      display: none;
+    }
+    .other-icons{
+        flex-direction: column;
+    }
+    .login-box{
+      flex:1;
+    }
+    .welcome-container{
+      flex:1;
+    }
+    .createGroups-container{
+      width:71%;
+    }
+    .MuiTextField-root{
+      width: 75%;
+    }
+    .login-text{
+      font-size: 6vw;
+    }
+    .chatArea-container {
+        flex: 1;
+        max-width: 100%;
+      }
+      .sideBar-container {
+        flex: 0;
+      }
+      .list-container{
+        flex:1;
+      }
+      .createGroups-container{
+        flex:1;
+      }
+      .main-container {
+        height: 100vh;
+        width: 100vw;
+      }
+      .chatArea-header{
+        width: 70vw;
+      }
+      .message-container{
+        width: 75vw;
+      }
+      .text-input-area{
+        width: 70vw;
+      }
+      .search-box{
+        width: 60vw;
+      }
+  }

@@ -1,5 +1,8 @@
 # 💬 Live Chat App
 
+[![GitHub stars](https://img.shields.io/github/stars/T1rth1/Live-Chat-App)](https://github.com/T1rth1/Live-Chat-App/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/T1rth1/Live-Chat-App)](https://github.com/T1rth1/Live-Chat-App/network)
+[![GitHub issues](https://img.shields.io/github/issues/T1rth1/Live-Chat-App)](https://github.com/T1rth1/Live-Chat-App/issues)
 Our platform is a comprehensive communication solution designed for efficient user interaction and group management.
 
 ## 🚀 Key Features

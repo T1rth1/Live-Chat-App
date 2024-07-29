@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/73623dee-f311-4833-8ba8-d547e8ecae6a)# 💬 Live Chat App
+# 💬 Live Chat App
 
 Our platform is a comprehensive communication solution designed for efficient user interaction and group management.
 
